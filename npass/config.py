@@ -11,6 +11,8 @@ DB_PORT_OUT = os.getenv('DB_PORT_OUT')
 DB_HOST = os.getenv('DB_HOST')
 DEBUG_MODE = os.getenv('DEBUG_MODE', False)
 TESTING_MODE = os.getenv('TESTING_MODE', False)
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
 class Config(object):

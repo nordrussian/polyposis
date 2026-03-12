@@ -12,3 +12,7 @@ docker compose up app
 - Вспонить как работать с Django ORM
 - Изучить транзакции
 - Подготовить вопросы
+
+Логин и пароль: admin / 123456
+dimac@Dimac--MacBook-Pro ~/Projects/Polyposis                                                                                                               
+$ docker exec -it polyposis-app-1 bash  

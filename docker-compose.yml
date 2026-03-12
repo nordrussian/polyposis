@@ -11,10 +11,10 @@ services:
     env_file:
       - .env
     ports:
-      - "127.0.0.1:${APP_PORT_OUT}:8000"
+      - "${APP_PORT_OUT}:8000"
     depends_on:
       - pg
-    command: python npass/manage.py runserver
+    command: python npass/manage.py runserver 0.0.0.0:8000
 
 
   pg:
