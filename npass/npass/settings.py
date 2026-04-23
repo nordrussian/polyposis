@@ -113,4 +113,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# URL для доступа к статическим файлам (в браузере)
+STATIC_URL = '/static/'
+
+# Папка, куда Django соберёт все статические файлы (включая админку)
+STATIC_ROOT = BASE_DIR / 'staticfiles'

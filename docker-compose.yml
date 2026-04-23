@@ -1,13 +1,11 @@
 services:
   app:
-
     build:
-      dockerfile: ./ci/Dockerfile.dev
+      dockerfile: ./Dockerfile
       context: ./
     # volumes:
     #   - static_volume:/code/static
     #   - media_volume:/code/media
-    
     env_file:
       - .env
     ports:
@@ -18,11 +16,9 @@ services:
 
 
   pg:
-    image: postgres
-
+    image: postgres:18
     env_file:
       - .env
-
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}

@@ -9,14 +9,14 @@ DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_PORT = os.getenv('DB_PORT')
 DB_PORT_OUT = os.getenv('DB_PORT_OUT')
 DB_HOST = os.getenv('DB_HOST')
-DEBUG_MODE = os.getenv('DEBUG_MODE', False)
+DEBUG = os.getenv('DEBUG', False)
 TESTING_MODE = os.getenv('TESTING_MODE', False)
 SECRET_KEY = os.getenv('SECRET_KEY')
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
-class Config(object):
-    DEBUG = DEBUG_MODE
+class Config:
+    DEBUG = DEBUG
     TESTING = TESTING_MODE
     CSRF_TRUSTED_ORIGINS = []
 
