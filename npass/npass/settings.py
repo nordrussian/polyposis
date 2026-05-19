@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'auth'
+    'auth_block'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,9 @@ STATIC_URL = '/static/'
 
 # Папка, куда Django соберёт все статические файлы (включая админку)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # путь к папке npass/static
+]
+
+AUTH_USER_MODEL = 'auth_block.CustomUser'

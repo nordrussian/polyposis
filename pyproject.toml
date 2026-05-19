@@ -6,13 +6,14 @@ authors = ["Nordrussian <nordrussian@ya.ru>"]
 package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.12,<3.13"
+python = ">=3.12,<3.14"
 asyncpg = "0.30.0"
 psycopg2-binary = "2.9.9"
 redis = "7.2.1"
 requests = "2.32.5"
 python-dotenv = "1.2.2"
 Django = '4.2'
+Pillow = "12.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "9.0.2"

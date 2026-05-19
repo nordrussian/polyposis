@@ -3,7 +3,8 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./
-    # volumes:
+    volumes:
+      - ./npass:/app/npass
     #   - static_volume:/code/static
     #   - media_volume:/code/media
     env_file:
@@ -12,8 +13,24 @@ services:
       - "${APP_PORT_OUT}:8000"
     depends_on:
       - pg
-    command: python npass/manage.py runserver 0.0.0.0:8000
-
+    command: python npass/manage.py runserver 0.0.0.0:8000 
+    
+  app_debug:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    volumes:
+      - ./npass:/app/npass
+    #   - static_volume:/code/static
+    #   - media_volume:/code/media
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT_OUT_DEBUG}:8000"
+      - "6789:6789"
+    depends_on:
+      - pg
+    command: python -m debugpy --listen 0.0.0.0:6789 --wait-for-client npass/manage.py runserver 0.0.0.0:8000
 
   pg:
     image: postgres:18
