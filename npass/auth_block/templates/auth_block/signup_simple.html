@@ -1,6 +1,7 @@
 <!-- auth_block/templates/auth_block/signup_simple.html -->
 
 {% load static %}
+{% csrf_token %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,16 +49,16 @@
             <form method="post">
                 {% csrf_token %}
                 
-                <!-- Username поле -->
+                <!-- email поле -->
                 <div class="form-group">
                     <input type="text" 
-                           name="{{ form.username.name }}" 
+                           name="{{ form.email.name }}" 
                            class="form-control" 
                            placeholder="Имя пользователя"
-                           value="{{ form.username.value|default:'' }}"
+                           value="{{ form.email.value|default:'' }}"
                            required>
-                    {% if form.username.errors %}
-                        <small class="text-danger">{{ form.username.errors.0 }}</small>
+                    {% if form.email.errors %}
+                        <small class="text-danger">{{ form.email.errors.0 }}</small>
                     {% endif %}
                 </div>
 
